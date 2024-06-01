@@ -32,6 +32,29 @@ Open-Meteo weather API: https://open-meteo.com/en/docs
 
 # Project Steps
 
+## Part 1: Data Ingestion
+
+### 1.1 Create s3 buckets to store data and query results
+
+### 1.2 Create Lambda function to ingest data from the external API
+
+### 1.3 Configure Kinesis Firehose to stream data from Lambda to s3
+
+## Part 2: Data Transformation
+
+### 2.1 Set up Athena to query the data
+
+### 2.2 Use AWS Glue crawler, jobs and workflows to create table schemas , partitions , table compression and incorporate data quality checks.
+
+
+## Part 3: Data Visualization
+
+## COnfiguring Grafana platform to connect with Athena and visualize the table data in Grafana via visualization graphs.
+
+
+
+
+
 
 
 
