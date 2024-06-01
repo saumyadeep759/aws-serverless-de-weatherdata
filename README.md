@@ -22,6 +22,17 @@ The architecture of this project consists of the following key components:
 6. Query Capability: Data can be queried using Amazon Athena for further analysis      
 
 # Prerequisites
-1. AWS Account
+1. AWS Account: The steps to set up the same can be found [here](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
 2. IAM roles with necessary permissions
-3. Grafana setup for AWS data source
+3. Grafana setup and configured to read from Athena
+
+# Data Source
+Open-Meteo weather API: https://open-meteo.com/en/docs
+
+
+# Project Steps
+
+
+
+
+
