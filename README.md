@@ -33,12 +33,20 @@ Open-Meteo weather API: https://open-meteo.com/en/docs
 # Project Steps
 
 ## Part 1: Data Ingestion
+Goal: The Goal is to read data from the weather API using a Lambda function and then dumping the data into an AWS s3 bucket in an organised fashion using Kinesis Firehose.
 
 ### 1.1 Create s3 buckets to store data and query results
-
-### 1.2 Create Lambda function to ingest data from the external API
+Initially 2 s3 buckets are created in AWS s3- one for storing data (ingested from the API) and another for storing the Athena query results.
 
 ### 1.3 Configure Kinesis Firehose to stream data from Lambda to s3
+Navigate to Kinesis in AWS and create and configure a Firehose stream as shown below:
+![image](https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/32a8b9f1-b88c-478c-88ac-6f79f14258c5)
+
+
+### 1.3 Create Lambda function to ingest data from the external API
+A Lambda function is created to ingest the historical data from the weather API and then using a dictionary to store the entire batch of data in it. The entire dictionary data is then dumped to the AWS Kinesis firehose configured in the next step
+
+
 
 ## Part 2: Data Transformation
 
