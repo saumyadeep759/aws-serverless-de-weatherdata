@@ -27,6 +27,7 @@ The architecture of this project consists of the following key components:
 3. Grafana setup and configured to read from Athena
 
 # Data Source
+The Open-Meteo weather API has been used which is a free, open-source weather API that provides real-time and forecast weather data for any location worldwide. It offers access to various meteorological data, including temperature, precipitation, and wind, without requiring authentication.
 Open-Meteo weather API: https://open-meteo.com/en/docs
 
 
