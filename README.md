@@ -42,7 +42,7 @@ The following fields have been retrieved:
 -`temperature_2m_max`:  maximum air temperature at 2 meters above the ground  
 -`daylight_duration`: total amount of time (in seconds) in a day during which natural sunlight was present, from sunrise to sunset  
 -`precipitation_sum`: total amount of precipitation (including rain, snow, sleet, etc.) accumulated in millimeters  
--`wind_speed_10m_max`: maximum wind speed(in km per hour) measured at 10 meters above the ground  
+-`wind_speed_10m_max`: maximum wind speed(in km per hour) measured at 10 meters above the ground    
 
 
 
@@ -60,7 +60,7 @@ Navigate to Kinesis in AWS and create and configure a Firehose stream with a buf
 
 ### 1.3 Create Lambda function to ingest data from the external API
 A Lambda function (in Python) is created to ingest the historical data from the weather API and then a python dictionary is used in the code to store the entire batch of data in it. The entire dictionary data is then connected to the AWS Kinesis firehose which dumps it to the s3 bucket (intended for storing data).
-Once the function is deployed, tested and invoked, the data appears in the s3 bucket.
+Once the function is deployed, tested and invoked, the data appears in the s3 bucket.  
 
 
 ## Part 2: Data Transformation
@@ -83,16 +83,16 @@ Once the workflow is ready, the same can be executed .
 
 ### 2.4 Accessing logs in CloudWatch
 
-Logs are especially useful for debugging jobs that have failed, as the error messages indicating the reasons the job failed will be inside the logs. The logs can be accessed in 'Job run monitoring' section.
+Logs are especially useful for debugging jobs that have failed, as the error messages indicating the reasons the job failed will be inside the logs. The logs can be accessed in 'Job run monitoring' section.  
 
 
 
 ## Part 3: Data Visualization
 
-### 3.1 COnfiguring Grafana platform to connect with Athena and visualize the table data in Grafana via visualization graphs.
-In AWS IAM, create a new Grafana user and then navigate to Grafana website to login using the creds  and then create a data connection.
+### 3.1 Configure Grafana platform
+In AWS IAM, create a new Grafana user and then navigate to Grafana website to login using the creds  and then create a data connection.    
 
-### 3.2 Create Visualization
+### 3.2 Create Visualizations
 The final step is to create visualizaions in Grafana to highlight KPIs as shown below
 URL: https://saumyadeep759.grafana.net/d/ednwvlzx0vkzkd/precipitation?orgId=1&from=1709870404822&to=1717642804822
 
@@ -100,6 +100,10 @@ URL: https://saumyadeep759.grafana.net/d/ednwvlzx0vkzkd/precipitation?orgId=1&fr
 
 
 
+## Acknowledgements
+- [Build Your First Serverless Data Engineering Project](https://maven.com/david-freitag/first-serverless-de-project)
+- [Open Meteo weather API](https://api.open-meteo.com//)
+- [Grafana Labs](https://grafana.com/)
 
 
 
