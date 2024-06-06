@@ -27,8 +27,23 @@ The architecture of this project consists of the following key components:
 3. Grafana setup and configured to read from Athena
 
 # Data Source
+
+### Overview
 The Open-Meteo weather API has been used which is a free, open-source weather API that provides real-time and forecast weather data for any location worldwide. It offers access to various meteorological data, including temperature, precipitation, and wind, without requiring authentication.
 Open-Meteo weather API: https://open-meteo.com/en/docs
+
+### Fields used
+The API has been used to retrieve historical weather data for Berlin (Germany) for the last 3 months i.e. from 01-Mar-2024 to 31-May-2024.
+
+The following fields have been retrieved:  
+-`latitude`: latitude of the place  
+-`latitude`: longitude of the place  
+-`time`: date time  
+-`temperature_2m_max`:  maximum air temperature at 2 meters above the ground  
+-`daylight_duration`: total amount of time (in seconds) in a day during which natural sunlight was present, from sunrise to sunset  
+-`precipitation_sum`: total amount of precipitation (including rain, snow, sleet, etc.) accumulated in millimeters  
+-`wind_speed_10m_max`: maximum wind speed(in km per hour) measured at 10 meters above the ground  
+
 
 
 # Project Steps
