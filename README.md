@@ -60,14 +60,28 @@ Navigate to Kinesis in AWS and create and configure a Firehose stream with a buf
 
 ### 1.3 Create Lambda function to ingest data from the external API
 A Lambda function (in Python) is created to ingest the historical data from the weather API and then a python dictionary is used in the code to store the entire batch of data in it. The entire dictionary data is then connected to the AWS Kinesis firehose which dumps it to the s3 bucket (intended for storing data).
-
+Once the function is deployed, tested and invoked, the data appears in the s3 bucket.
 
 
 ## Part 2: Data Transformation
+Goal: The goal is to process and manipulate data to make it suitable for various purposes such as analytics, reporting, and machine learning
 
-### 2.1 Set up Athena to query the data
+### 2.1 Use AWS Glue crawler to crawl data and create table schema and partitions
+The 1st step is to navigate to AWS Glue and configure a Crawler to read data from the s3 bucket and create a partioned table and schema. Once the crawler is configured, the newly created table can be accessed in Athena Query editor.
 
-### 2.2 Use AWS Glue crawler, jobs and workflows to create table schemas , partitions , table compression and incorporate data quality checks.
+### 2.2 Set up ETL job to create parquet table
+Initially, a new S3 bucket to store the Parquet output files from the Glue jobs needs to be created.
+Under AWS Glue, navigate to ETL jobs and create a job in python to create a parquet version of the table created in step 2.1. 
+
+### 2.3 Configure other ETL jobs and orchestrate a workflow
+Create other ETL jobs to delete table , incorporate data quality checks and eventually publish a prod version of the table to query in Athena. All these jobs need to be configured in a ETL workflow as shown below:
+<img width="798" alt="image" src="https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/e5d82c9a-297a-446b-a962-fac9ec8bb4f7">
+
+<img width="553" alt="image" src="https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/224e0526-30c1-4f1f-b28a-c16d38939f39">
+
+
+
+
 
 
 ## Part 3: Data Visualization
