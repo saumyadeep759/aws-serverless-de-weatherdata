@@ -1,5 +1,5 @@
 # Project Overview
-This project demonstrates the creation of a serverless data pipeline on AWS, which ingests weather data from an open source weather API, processes and stores the data in Amazon S3 using Kinesis Firehose, and leverages AWS Glue for ETL processes. AWS Glue is used to orchestrate workflows for creating schemas and partitions, converting data into compressed table formats (Parquet), and implementing data quality checks. The data can be queried using AWS Athena and is ultimately visualized using Grafana.
+This project showcases the development of a serverless data pipeline on AWS. It collects weather data from an open-source weather API, stores it in Amazon S3 using Kinesis Firehose, and performs data processing using AWS Glue. AWS Glue handles tasks like organizing data schemas and partitions, converting data into efficient formats (Parquet), and ensuring data quality. Users can query the data with AWS Athena and visualize it using Grafana.
 
 # Architecture
 The architecture of this project consists of the following key components:
