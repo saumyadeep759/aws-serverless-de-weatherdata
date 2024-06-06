@@ -74,19 +74,30 @@ Initially, a new S3 bucket to store the Parquet output files from the Glue jobs 
 Under AWS Glue, navigate to ETL jobs and create a job in python to create a parquet version of the table created in step 2.1. 
 
 ### 2.3 Configure other ETL jobs and orchestrate a workflow
-Create other ETL jobs to delete table , incorporate data quality checks and eventually publish a prod version of the table to query in Athena. All these jobs need to be configured in a ETL workflow as shown below:
+Create other ETL jobs to delete table , incorporate data quality checks and eventually publish a prod version of the table to query in Athena. All these jobs need to be configured and arranged in a AWS Glue workflow as shown below:
 <img width="798" alt="image" src="https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/e5d82c9a-297a-446b-a962-fac9ec8bb4f7">
 
 <img width="553" alt="image" src="https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/224e0526-30c1-4f1f-b28a-c16d38939f39">
 
+Once the workflow is ready, the same can be executed .
 
+### 2.4 Accessing logs in CloudWatch
 
+Logs are especially useful for debugging jobs that have failed, as the error messages indicating the reasons the job failed will be inside the logs. The logs can be accessed in 'Job run monitoring' section.
 
 
 
 ## Part 3: Data Visualization
 
-## COnfiguring Grafana platform to connect with Athena and visualize the table data in Grafana via visualization graphs.
+### 3.1 COnfiguring Grafana platform to connect with Athena and visualize the table data in Grafana via visualization graphs.
+In AWS IAM, create a new Grafana user and then navigate to Grafana website to login using the creds  and then create a data connection.
+
+### 3.2 Create Visualization
+The final step is to create visualizaions in Grafana to highlight KPIs as shown below
+URL: https://saumyadeep759.grafana.net/d/ednwvlzx0vkzkd/precipitation?orgId=1&from=1709870404822&to=1717642804822
+
+<img width="1292" alt="image" src="https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/c868107b-e79c-4fc2-91f9-54f4dd948d3e">
+
 
 
 
