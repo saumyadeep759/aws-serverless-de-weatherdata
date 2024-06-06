@@ -54,7 +54,7 @@ Goal: The Goal is to read data from the weather API using a Lambda function and 
 ### 1.1 Create s3 buckets to store data and query results
 Initially 2 s3 buckets are created in AWS s3- one for storing data (ingested from the API) and another for storing the Athena query results.
 
-### 1.3 Configure Kinesis Firehose to stream data from Lambda to s3
+### 1.2 Configure Kinesis Firehose to stream data from Lambda to s3
 Navigate to Kinesis in AWS and create and configure a Firehose stream with a buffer size and interval of 5mb and 60s respectively.
 
 
