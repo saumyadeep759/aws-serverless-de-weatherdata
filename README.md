@@ -55,12 +55,11 @@ Goal: The Goal is to read data from the weather API using a Lambda function and 
 Initially 2 s3 buckets are created in AWS s3- one for storing data (ingested from the API) and another for storing the Athena query results.
 
 ### 1.3 Configure Kinesis Firehose to stream data from Lambda to s3
-Navigate to Kinesis in AWS and create and configure a Firehose stream as shown below:
-![image](https://github.com/saumyadeep759/aws-serverless-de-weatherdata/assets/26822492/32a8b9f1-b88c-478c-88ac-6f79f14258c5)
+Navigate to Kinesis in AWS and create and configure a Firehose stream with a buffer size and interval of 5mb and 60s respectively.
 
 
 ### 1.3 Create Lambda function to ingest data from the external API
-A Lambda function is created to ingest the historical data from the weather API and then using a dictionary to store the entire batch of data in it. The entire dictionary data is then dumped to the AWS Kinesis firehose configured in the next step
+A Lambda function (in Python) is created to ingest the historical data from the weather API and then a python dictionary is used in the code to store the entire batch of data in it. The entire dictionary data is then connected to the AWS Kinesis firehose which dumps it to the s3 bucket (intended for storing data).
 
 
 
